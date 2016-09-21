@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './storePicker.css';
+import h from './helpers/helpers';
 
 var StorePicker = React.createClass({
-
     render: function(){
+        var name = "Store";
         return(
-            <form>
-                <p>hello</p>
+            <form className="store-selector">
+                <h2>Please Enter A {name}</h2>
+                <input type="text" ref="storeId" required />
+                <input type="submit" value="Submit" />
             </form>
         )
     }
