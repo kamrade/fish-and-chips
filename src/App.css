@@ -1,4 +1,9 @@
 
-.board {
+.header {
+    text-align: center;
+}
 
+.list {
+    text-align: center;
+    list-style: none
 }
