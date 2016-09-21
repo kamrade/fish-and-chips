@@ -1,11 +1,13 @@
 .menu-fish {
     float: left;
-    min-height: 400px;
+    height: 440px;
+    overflow: auto;
     border-bottom: 1px solid #ccc;
     margin: 0 0 32px;
 }
 
 .menu-fish img {
-    width: 235px;
-    height: 156px;
+    /*width: 235px;*/
+    /*height: 156px;*/
+    width: 100%;
 }

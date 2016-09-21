@@ -25,7 +25,11 @@ var App = React.createClass({
         })
     },
     renderFish: function(key){
-        return <Fish key={key} index={key} details={this.state.fishes[key]} />
+        return <Fish key={key} index={key} details={this.state.fishes[key]} addToOrder={this.addToOrder}/>
+    },
+    addToOrder: function(key){
+        this.state.order[key] = this.state.order[key] + 1 || 1;
+        this.setState({ order: this.state.order });
     },
     render: function() {
         return (
@@ -33,16 +37,16 @@ var App = React.createClass({
                 <div className="row">
                     <div className="menu col-xs-12">
                         <Header tagline="Fresh Seafood Market" num="5000" />
-                        <ul className="list row">
+                        <ul className="list">
                             {Object.keys(this.state.fishes).map(this.renderFish)}
                         </ul>
                     </div>
 
                     <div className="col-sm-6">
-                        <Order />
+                        <Order fishes={this.state.fishes} order={this.state.order}/>
                     </div>
                     <div className="col-sm-6">
-                        <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
+                        <Inventory addFish={this.addFish} loadSamples={this.loadSamples}/>
                     </div>
                 </div>
             </div>
